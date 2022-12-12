@@ -19,14 +19,14 @@ namespace ConsoleApp1
             Console.Clear();
             Console.WriteLine("Nama Kelompok 2 : ");
             Console.WriteLine(" Sandhi Dwi Widyantoro ");
-            Console.WriteLine(" Calvin Moyana");
+            Console.WriteLine(" Calvin Moyana\n");
             Console.WriteLine("==BASIC AUTHENTICATION==");
             Console.WriteLine("1. Create User");
             Console.WriteLine("2. Show User");
             Console.WriteLine("3. Search User");
             Console.WriteLine("4. Login User");
             Console.WriteLine("5. Exit");
-            Console.Write("Masukkan Pilihan : ");
+            Console.Write("Masukkan Pilihan (pilih sesuai nomer) : ");
             var input = Console.ReadLine();
 
             bool successfull = false;
@@ -89,7 +89,7 @@ namespace ConsoleApp1
                 Console.Write("Enter your password: ");
                 password = Console.ReadLine();
 
-                if(!validateGuidRegex.IsMatch(password))
+                if (!validateGuidRegex.IsMatch(password))
                 {
                     Console.WriteLine("Password must have at least 8 characters\r\n with at least one Capital letter, at least one lower case letter and at least one number.");
                 }
@@ -121,14 +121,14 @@ namespace ConsoleApp1
             for (int i = 0; i < arrUsers.Count; i++)
             {
                 Console.WriteLine("=============================");
-                Console.WriteLine("ID\t: "+(i+1));
-                Console.WriteLine("Name\t: "+ arrUsers[i].first_name + " " + arrUsers[i].last_name);
-                Console.WriteLine("Username: "+ arrUsers[i].username);
-                Console.WriteLine("Password: "+ arrUsers[i].password);
+                Console.WriteLine("ID\t: " + (i + 1));
+                Console.WriteLine("Name\t: " + arrUsers[i].first_name + " " + arrUsers[i].last_name);
+                Console.WriteLine("Username: " + arrUsers[i].username);
+                Console.WriteLine("Password: " + arrUsers[i].password);
                 Console.WriteLine("=============================");
             }
         }
-        public static void menuEditUbahHapus(string input) 
+        public static void menuEditUbahHapus(string input)
         {
             Console.WriteLine("Menu : ");
             Console.WriteLine("1. Edit user");
@@ -144,9 +144,20 @@ namespace ConsoleApp1
                 arrUsers[id - 1].first_name = Console.ReadLine();
                 Console.Write("Last name = ");
                 arrUsers[id - 1].last_name = Console.ReadLine();
-                arrUsers[id - 1].username = arrUsers[id-1].first_name.Substring(0, 2) + arrUsers[id - 1].last_name.Substring(0, 2);
-                Console.Write("password = ");
-                arrUsers[id - 1].password = Console.ReadLine();
+                arrUsers[id - 1].username = arrUsers[id - 1].first_name.Substring(0, 2) + arrUsers[id - 1].last_name.Substring(0, 2);
+
+                Regex validateGuidRegex = new Regex("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)[a-zA-Z\\d]{8,}$");
+                do
+                {
+                    Console.Write("Enter your password: ");
+                    arrUsers[id - 1].password = Console.ReadLine();
+
+                    if (!validateGuidRegex.IsMatch(arrUsers[id - 1].password))
+                    {
+                        Console.WriteLine("Password must have at least 8 characters\r\n with at least one Capital letter, at least one lower case letter and at least one number.");
+                    }
+                } while (!validateGuidRegex.IsMatch(arrUsers[id - 1].password));
+
                 Console.WriteLine("User Success to Edited!!!");
                 string enterin = Console.ReadLine();
             }
@@ -213,7 +224,7 @@ namespace ConsoleApp1
         public string username;
         public string password;
 
-        public Users(string first_name, string last_name,string username, string password)
+        public Users(string first_name, string last_name, string username, string password)
         {
             this.first_name = first_name;
             this.last_name = last_name;

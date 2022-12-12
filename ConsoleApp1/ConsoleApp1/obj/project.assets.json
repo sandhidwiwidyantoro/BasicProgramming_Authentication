@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\00.METRODATA\\BULAN PERTAMA\\7.HARI KETUJUH\\ConsoleApp1\\ConsoleApp1\\ConsoleApp1.csproj",
+      "projectUniqueName": "D:\\00.METRODATA\\BULAN PERTAMA\\7.HARI KETUJUH\\BasicProgramming_Kelompok\\ConsoleApp1\\ConsoleApp1\\ConsoleApp1.csproj",
       "projectName": "ConsoleApp1",
-      "projectPath": "D:\\00.METRODATA\\BULAN PERTAMA\\7.HARI KETUJUH\\ConsoleApp1\\ConsoleApp1\\ConsoleApp1.csproj",
+      "projectPath": "D:\\00.METRODATA\\BULAN PERTAMA\\7.HARI KETUJUH\\BasicProgramming_Kelompok\\ConsoleApp1\\ConsoleApp1\\ConsoleApp1.csproj",
       "packagesPath": "C:\\Users\\sandh\\.nuget\\packages\\",
-      "outputPath": "D:\\00.METRODATA\\BULAN PERTAMA\\7.HARI KETUJUH\\ConsoleApp1\\ConsoleApp1\\obj\\",
+      "outputPath": "D:\\00.METRODATA\\BULAN PERTAMA\\7.HARI KETUJUH\\BasicProgramming_Kelompok\\ConsoleApp1\\ConsoleApp1\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
